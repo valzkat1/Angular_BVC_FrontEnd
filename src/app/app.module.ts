@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AddEventoComponent } from './components/add-evento/add-evento.component';
 import { DetalleEventosComponent } from './components/detalle-eventos/detalle-eventos.component';
 import { ListaEventosComponent } from './components/lista-eventos/lista-eventos.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
