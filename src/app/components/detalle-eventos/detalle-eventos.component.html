@@ -1,1 +1,85 @@
-<p>detalle-eventos works!</p>
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentEvento.id">
+      <h4>Evento</h4>
+      <div>
+        <label><strong>Origen:</strong></label> {{ currentEvento.origenevento }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentEvento.cantidad }}
+      </div>
+      <div>
+        <label><strong>Fecha:</strong></label>
+        {{ currentEvento.fecha }}
+      </div>
+      <a
+        class="badge badge-warning"
+        routerLink="/eventos/{{ currentEvento.id }}"
+      >
+        Edit
+      </a>
+    </div>
+    <div *ngIf="!currentEvento">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentEvento.id" class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            (ngModel)="currentEvento.origenevento"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            (ngModel)="currentEvento.cantidad"
+            name="description"
+          />
+        </div>
+        <div class="form-group">
+          <label><strong>Fecha:</strong></label>
+          {{ currentEvento.fecha }}
+        </div>
+      </form>
+      <button
+        class="badge badge-primary mr-2"        
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+       
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+      <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+        Delete
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateTutorial()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentEvento.id">
+      <br />
+      <p>No se puede acceder al eventol...</p>
+    </div>
+  </ng-template>

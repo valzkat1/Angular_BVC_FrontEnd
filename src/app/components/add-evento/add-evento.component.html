@@ -1,19 +1,46 @@
 <div>
     <div class="submit-form">
+        <h4>Registro de eventos Digitales</h4>
+
       <div *ngIf="!submitted">
         <div class="form-group">
-          <label for="title">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="origenevento"
-            required
-            [(ngModel)]="evento.origenevento"
-            name="origenevento"
-          />
+          <label for="title">Plataforma de Origen</label>
+          <select  class="form-control"
+          id="origenevento"
+          required 
+          [(ngModel)]="evento.origenevento"
+          name="origenevento" >
+
+            <option value="PACTO">Plataforma de generación de pagarés</option>
+            <option value="DEPO">Plataforma de bóveda de valores</option>
+            <option value="BAKO">Plataforma de backoffice</option>
+            <option value="PLATGI">Plataforma digital</option>
+            
+
+          </select>
+        
         </div>
+
         <div class="form-group">
-          <label for="description">Description</label>
+            <label for="title">Tipo Evento Digital</label>
+            <select  class="form-control"
+            id="tipoevento"
+            required 
+            [(ngModel)]="evento.tipoevento"
+            name="tipoevento" >
+  
+              <option value="F001">Consulta de información bursátil</option>
+              <option value="F002">Emisión de titulo valor</option>
+              <option value="F003">Generacion de Reportes Operativos</option>
+              <option value="F004">Custodia de titulo valor</option>
+              <option value="F005">Complementación de operación</option>
+  
+            </select>
+          
+          </div>
+
+        <div class="form-group">
+          <label for="description">Cantidad</label>
           <input
             class="form-control"
             id="cantidad"
@@ -24,9 +51,9 @@
         </div>
         <button (click)="saveEvento()" class="btn btn-success">Enviar</button>
       </div>
-      <div *ngIf="submitted">
+     <!-- <div *ngIf="submitted">
         <h4>Evento enviado de forma correcta!</h4>
         <button class="btn btn-success" (click)="newEvento()">Agregar</button>
-      </div>
+      </div>-->
     </div>
   </div>

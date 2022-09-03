@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Eventos } from '../models/eventos.model';
-const baseUrl = 'http://localhost:8080/api/tutorials';
+//const baseUrl = 'http://ec2-54-84-14-195.compute-1.amazonaws.com/challenge_bvc/api/Eventos';
+const baseUrl = 'http://localhost:8080/api/Eventos';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +30,6 @@ export class EventosService {
     return this.http.delete(baseUrl);
   }
   findByOrigenevento(title: any): Observable<Eventos[]> {
-    return this.http.get<Eventos[]>(`${baseUrl}?origen=${title}`);
+    return this.http.get<Eventos[]>(`${baseUrl}?origenevento=${title}`);
   }
 }

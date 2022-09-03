@@ -1,1 +1,78 @@
-<p>lista-eventos works!</p>
+<div class="list row">
+    <h4>Lista de eventos Digitales</h4>
+    <div class="col-md-12">
+      <div class="input-group mb-3">
+        <!--<input
+          type="text"
+          class="form-control"
+          placeholder="Buscar por Plataforma"
+          [(ngModel)]="origenevento"
+        />-->
+        <select class="form-control"
+        placeholder="Buscar por Plataforma"
+        [(ngModel)]="origenevento" (change)="searchPlataforma()">
+            <option value="PACTO">Plataforma de generación de pagarés</option>
+            <option value="DEPO">Plataforma de bóveda de valores</option>
+            <option value="BAKO">Plataforma de backoffice</option>
+            <option value="PLATGI">Plataforma digital</option>
+        </select>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchPlataforma()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+    
+       <!-- <ul class="list-group">
+      <li
+          class="list-group-item"
+          ngFor="let evento of eventos; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(evento, i)"
+        >
+          {{ evento.origenevento }}
+        </li>
+      </ul>-->
+      <table class="table">
+        <thead class="thead-dark">
+            <th>id</th>
+            <th>Fecha</th>
+            <th>Plataforma</th>
+            <th>Tipo Evento</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+        </thead>
+<tbody>
+    <tr
+  
+    *ngFor="let evento of eventos; let i = index"
+    [class.active]="i == currentIndex"
+    (click)="setActiveTutorial(evento, i)"
+>
+<td> {{ evento.id }}</td>
+<td> {{ ((evento.fecha))| date :'Y-M-dd hh:mm:ss' }}</td>
+<td> {{ evento.origenevento }}</td>
+<td> {{ evento.tipoevento }}</td>
+<td> {{ evento.cantidad }}</td>
+<td> ${{ evento.total }}</td>
+</tr>
+</tbody>
+      </table>
+
+      <!--<button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+        Eliminar Todo
+          </button>-->
+    </div>
+    <div class="col-md-6">
+      <app-detalle-eventos
+        [viewMode]="true"
+        [currentEvento]="currentEvento"
+      ></app-detalle-eventos>
+    </div>
+  </div>
