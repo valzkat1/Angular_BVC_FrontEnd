@@ -61,6 +61,7 @@ export class DetalleEventosComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'El Evento Fue actualizado con exito!';
+          this.router.navigate(['/eventos']);
         },
         error: (e) => console.error(e)
       });
