@@ -30,7 +30,7 @@
   </div>
   <ng-template #editable>
     <div *ngIf="currentEvento.id" class="edit-form">
-      <h4>Evento</h4>
+      <h4>Editar Evento</h4>
       <form>
         <div class="form-group">
           <label for="origenevento">Plataforma de Origen</label>
@@ -41,6 +41,23 @@
             [(ngModel)]="currentEvento.origenevento"
             name="origenevento"
           />
+        </div>
+        <div class="form-group">
+          <label for="title">Tipo Evento Digital</label>
+          <select  class="form-control"
+          id="tipoevento"
+          required 
+          [(ngModel)]="currentEvento.tipoevento"
+          name="tipoevento" >
+
+            <option value="F001">Consulta de información bursátil</option>
+            <option value="F002">Emisión de titulo valor</option>
+            <option value="F003">Generacion de Reportes Operativos</option>
+            <option value="F004">Custodia de titulo valor</option>
+            <option value="F005">Complementación de operación</option>
+
+          </select>
+        
         </div>
         <div class="form-group">
           <label for="Cantidad">Cantidad</label>
