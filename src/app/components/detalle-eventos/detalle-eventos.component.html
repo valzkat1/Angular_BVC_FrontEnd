@@ -5,12 +5,16 @@
         <label><strong>Origen:</strong></label> {{ currentEvento.origenevento }}
       </div>
       <div>
-        <label><strong>Description:</strong></label>
+        <label><strong>Cantidad:</strong></label>
         {{ currentEvento.cantidad }}
       </div>
       <div>
         <label><strong>Fecha:</strong></label>
-        {{ currentEvento.fecha }}
+        {{ currentEvento.fecha |  date :'Y-M-dd hh:mm:ss' }}
+      </div>
+      <div>
+        <label><strong>Total:</strong></label>
+        {{ currentEvento.total  }}
       </div>
       <a
         class="badge badge-warning"
