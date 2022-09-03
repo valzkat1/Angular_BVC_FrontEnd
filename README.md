@@ -14,7 +14,7 @@ Adicionalmente de instala git en la instancia EC2 para descargar la ultima versi
 
 ## Lista de Eventos
 
-Se adiciona un evento para visualizar el detalle del evento seleccionado y poder direccionar a una interfaz de edicion.
+Se adiciona un (click event) para visualizar el detalle del Evento Digital seleccionado y poder direccionar a una interfaz de edicion.
 
 ![DetalleEventos](https://user-images.githubusercontent.com/15013055/188269749-b508bea4-146c-435f-889e-72819ae5bb74.png)
 
