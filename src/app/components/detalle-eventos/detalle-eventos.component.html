@@ -1,8 +1,11 @@
 <div *ngIf="viewMode; else editable">
     <div *ngIf="currentEvento.id">
-      <h4>Evento</h4>
+      <h4>Detalles de Evento {{ currentEvento.id }}</h4>
       <div>
-        <label><strong>Origen:</strong></label> {{ currentEvento.origenevento }}
+        <label><strong>Plataforma Origen:</strong></label> {{ currentEvento.origenevento }}
+      </div>
+      <div>
+        <label><strong>Tipo  Evento:</strong></label> {{ currentEvento.tipoevento }}
       </div>
       <div>
         <label><strong>Cantidad:</strong></label>
@@ -14,7 +17,7 @@
       </div>
       <div>
         <label><strong>Total:</strong></label>
-        {{ currentEvento.total  }}
+        ${{ currentEvento.total  }}
       </div>
       <a
         class="badge badge-warning"
