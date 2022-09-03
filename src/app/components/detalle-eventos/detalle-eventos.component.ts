@@ -24,10 +24,10 @@ export class DetalleEventosComponent implements OnInit {
   ngOnInit(): void {
     if (!this.viewMode) {
       this.message = '';
-      this.getTutorial(this.route.snapshot.params["id"]);
+      this.getEventos(this.route.snapshot.params["id"]);
     }
   }
-  getTutorial(id: string): void {
+  getEventos(id: string): void {
     this.eventosService.get(id)
       .subscribe({
         next: (data) => {
@@ -54,23 +54,23 @@ export class DetalleEventosComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-  updateTutorial(): void {
+  updateEvento(): void {
     this.message = '';
     this.eventosService.update(this.currentEvento.id, this.currentEvento)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message : 'This tutorial was updated successfully!';
+          this.message = res.message ? res.message : 'El Evento Fue actualizado con exito!';
         },
         error: (e) => console.error(e)
       });
   }
-  deleteTutorial(): void {
+  deleteEvento(): void {
     this.eventosService.delete(this.currentEvento.id)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/tutorials']);
+          this.router.navigate(['/eventos']);
         },
         error: (e) => console.error(e)
       });

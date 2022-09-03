@@ -20,17 +20,17 @@
         class="badge badge-warning"
         routerLink="/eventos/{{ currentEvento.id }}"
       >
-        Editar
+        Edit
       </a>
     </div>
     <div *ngIf="!currentEvento">
       <br />
-      <p>Por favor presione sobre algun evento...</p>
+      <p> click en un Evento por favor...</p>
     </div>
   </div>
   <ng-template #editable>
     <div *ngIf="currentEvento.id" class="edit-form">
-      <h4>Evento </h4>
+      <h4>Tutorial</h4>
       <form>
         <div class="form-group">
           <label for="origenevento">Plataforma de Origen</label>
@@ -62,8 +62,23 @@
         </div>
       </form>
    
-     
-   
+   <!--   <button
+       
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>-->
+      <button class="badge badge-danger mr-2" (click)="deleteEvento()">
+        Eliminar
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateEvento()"
+      >
+        Actualizar
+      </button>
       <p>{{ message }}</p>
     </div>
     <div *ngIf="!currentEvento.id">

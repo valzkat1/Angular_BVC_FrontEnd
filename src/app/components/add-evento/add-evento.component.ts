@@ -10,7 +10,7 @@ import { EventosService } from 'src/app/services/eventos.service';
 export class AddEventoComponent implements OnInit {
 
   @Input() evento: Eventos = {
-    cantidad: 0,
+    cantidad: 1,
     origenevento: '',
     tipoevento:'',
     fecha: ''
@@ -39,7 +39,7 @@ export class AddEventoComponent implements OnInit {
   newEvento(): void {
     this.submitted = false;
     this.evento = {
-      cantidad: 0,
+      cantidad: 1,
       origenevento: '',
       fecha: '',
       tipoevento:''
