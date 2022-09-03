@@ -17,3 +17,9 @@ Adicionalmente de instala git en la instancia EC2 para descargar la ultima versi
 Se adiciona un evento para visualizar el detalle del evento seleccionado y poder direccionar a una interfaz de edicion.
 
 ![DetalleEventos](https://user-images.githubusercontent.com/15013055/188269749-b508bea4-146c-435f-889e-72819ae5bb74.png)
+
+
+## Editar Evento
+
+
+![EditaFormEvento](https://user-images.githubusercontent.com/15013055/188271145-9ef34a1e-9ba4-4899-9e34-147a0903a44c.png)
