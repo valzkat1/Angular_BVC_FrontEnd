@@ -23,3 +23,10 @@ Se adiciona un (click event) para visualizar el detalle del Evento Digital selec
 
 
 ![EditaFormEvento](https://user-images.githubusercontent.com/15013055/188271145-9ef34a1e-9ba4-4899-9e34-147a0903a44c.png)
+
+
+## Eliminar Evento
+
+Tambien se incorpora un boton en la vista de edicion de Eventos para eliminar el correspondiente.
+
+![DeleteEvento](https://user-images.githubusercontent.com/15013055/188272782-537da30e-e459-4d14-b85b-42520ab406dd.png)
