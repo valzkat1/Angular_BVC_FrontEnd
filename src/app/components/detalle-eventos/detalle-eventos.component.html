@@ -34,13 +34,21 @@
       <form>
         <div class="form-group">
           <label for="origenevento">Plataforma de Origen</label>
-          <input
-            type="text"
-            class="form-control"
-            id="origenevento"
-            [(ngModel)]="currentEvento.origenevento"
-            name="origenevento"
-          />
+        
+          <select  class="form-control"
+          id="origenevento"
+          required 
+          [(ngModel)]="currentEvento.origenevento"
+          name="origenevento" >
+
+            <option value="PACTO">Plataforma de generación de pagarés</option>
+            <option value="DEPO">Plataforma de bóveda de valores</option>
+            <option value="BAKO">Plataforma de backoffice</option>
+            <option value="PLATGI">Plataforma digital</option>
+            
+
+          </select>
+
         </div>
         <div class="form-group">
           <label for="title">Tipo Evento Digital</label>
